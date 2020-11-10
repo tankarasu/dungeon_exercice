@@ -15,7 +15,7 @@ public class WarriorSuperClass {
 
     // méthodes
     public boolean isAlive(WarriorSuperClass character) {
-        return m_iHealthPoint > 0;
+        return getHealthPoint() > 0;
     }
 
     // getters
@@ -24,7 +24,7 @@ public class WarriorSuperClass {
         return m_iHealthPoint;
     }
 
-    protected boolean getIsAlive() {
+    public boolean getIsAlive() {
         return m_bIsAlive;
     }
 

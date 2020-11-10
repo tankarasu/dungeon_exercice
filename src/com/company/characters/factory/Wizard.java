@@ -1,6 +1,6 @@
 package com.company.characters.factory;
 
-public class Wizard extends Monster {
+public class Wizard extends Monster implements WarriorInterface {
     // variables membres
 
 
@@ -12,6 +12,12 @@ public class Wizard extends Monster {
     }
 
     // méthodes
+
+    @Override
+    public void attack(WarriorSuperClass defendingCharacter) {
+        System.out.println("Wizard attack");
+    }
+
 
     // getters
 

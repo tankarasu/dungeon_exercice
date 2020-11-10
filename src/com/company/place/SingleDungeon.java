@@ -30,10 +30,10 @@ public class SingleDungeon {
         fillTheDungeonWithRoom(dungeonRooms);
 
         // all rooms are iterated once you're still alive and monster is not
-         for (int i = 0; i < dungeonRooms.length; i++) {
-                dungeonRooms[i].enterInsideTheRoom(player);
-            }
-
+        for (int i = 0; i < dungeonRooms.length; i++) {
+            dungeonRooms[i].enterInsideTheRoom(player);
+        }
+//todo break the loop when die
 
 
         // Alive until the last Doors

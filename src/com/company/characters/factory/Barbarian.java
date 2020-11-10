@@ -1,6 +1,6 @@
 package com.company.characters.factory;
 
-public class Barbarian extends Monster{
+public class Barbarian extends Monster implements WarriorInterface{
     // variables membres
 
     //constructor
@@ -10,6 +10,12 @@ public class Barbarian extends Monster{
     }
 
     // méthodes
+
+    @Override
+    public void attack(WarriorSuperClass defendingCharacter) {
+        System.out.println("Barbarian Attack");
+    }
+
 
     // getters
 

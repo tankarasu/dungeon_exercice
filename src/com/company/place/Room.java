@@ -35,6 +35,14 @@ public class Room {
                     " You were attacked by a " + monsterType);
             monsterInTheRoom.whatIsWeakness();
         }
+        // a fight until one of them die
+        do {
+            monsterInTheRoom.attack(player);
+            if (!player.isAlive(player)) break;
+            player.attack(monsterInTheRoom);
+            monsterInTheRoom.setIsAlive(false);
+            if (!monsterInTheRoom.isAlive(monsterInTheRoom)) break;
+        } while ((player.getIsAlive()) && (monsterInTheRoom.getIsAlive()));
     }
 
     // getters

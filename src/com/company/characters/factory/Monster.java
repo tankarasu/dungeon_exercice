@@ -1,6 +1,6 @@
 package com.company.characters.factory;
 
-public class Monster extends WarriorSuperClass {
+public class Monster extends WarriorSuperClass implements WarriorInterface {
     // monsters will have a weakness, and know it
     // indicates players wich weapon is efficient
 
@@ -12,6 +12,11 @@ public class Monster extends WarriorSuperClass {
     // méthodes
     public void whatIsWeakness() {
         System.out.println("You must attack back with " + getWeakness());
+    }
+
+    @Override
+    public void attack(WarriorSuperClass defendingCharacter) {
+
     }
 
     // getters
