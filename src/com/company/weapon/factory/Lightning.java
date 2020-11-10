@@ -1,4 +1,12 @@
 package com.company.weapon.factory;
 
-public class Lightning implements WeaponsInterface{
+import com.company.characters.factory.WarriorSuperClass;
+
+public class Lightning implements WeaponsInterface {
+
+    // méthodes
+    @Override
+    public void inflictDamages(WarriorSuperClass defendingCharacter) {
+
+    }
 }

@@ -1,5 +1,6 @@
 package com.company.weapon;
 
+import com.company.characters.factory.WarriorSuperClass;
 import com.company.weapon.factory.*;
 
 public class WeaponFactory extends WeaponSuperClass {
@@ -16,20 +17,23 @@ public class WeaponFactory extends WeaponSuperClass {
 
     // méthodes
     // creating weapons
-    public Sword setWeapon(Sword p_weaponToSet) {
-        return p_weaponToSet = new Sword();
-    }
-
-    public Axe setWeapon(Axe p_weaponToSet) {
-        return p_weaponToSet = new Axe();
-    }
-
-    public Lightning setWeapon(Lightning p_weaponToSet) {
-        return p_weaponToSet = new Lightning();
-    }
-
-    public Water_Flask setWeapon(Water_Flask p_weaponToSet) {
-        return p_weaponToSet = new Water_Flask();
+    public WeaponsInterface setWeapon(String type) {
+        if (type == null) {
+            return null;
+        }
+        if (type.equalsIgnoreCase("Sword")) {
+            return new Sword();
+        }
+        if (type.equalsIgnoreCase("Axe")) {
+            return new Axe();
+        }
+        if (type.equalsIgnoreCase("Water_Flask")) {
+            return new Water_Flask();
+        }
+        if (type.equalsIgnoreCase("Lightning")) {
+            return new Lightning();
+        }
+        return null;
     }
 
     // getters

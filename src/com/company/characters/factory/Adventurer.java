@@ -1,25 +1,22 @@
 package com.company.characters.factory;
 
-import com.company.weapon.factory.Sword;
-import com.company.weapon.factory.Water_Flask;
+import com.company.weapon.factory.WeaponsInterface;
 
 public class Adventurer extends WarriorSuperClass implements WarriorInterface {
     // variables membres
 
     /*
-     * Player have 2 differents weapons depends monster at instanciation
+     * Player have 2 différents weapons depends monster at instanciation
      * */
-    private boolean m_bIsKO;
-    private Sword swordWeapon;
-    private Water_Flask water_flaskWeapon;
-
+    private WeaponsInterface swordWeapon;
+    private WeaponsInterface water_flaskWeapon;
 
     //constructor
 
     public Adventurer() {
         setHealthPoint(200);
-        weaponFactory.setWeapon(swordWeapon);
-        weaponFactory.setWeapon(water_flaskWeapon);
+        swordWeapon = weaponFactory.setWeapon("Sword");
+        water_flaskWeapon = weaponFactory.setWeapon("Water_Flask");
     }
 
     // méthodes

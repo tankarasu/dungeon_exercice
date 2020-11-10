@@ -1,5 +1,11 @@
 package com.company.weapon.factory;
 
-public class Water_Flask implements WeaponsInterface{
+import com.company.characters.factory.WarriorSuperClass;
 
+public class Water_Flask implements WeaponsInterface {
+
+    @Override
+    public void inflictDamages(WarriorSuperClass defendingCharacter) {
+
+    }
 }

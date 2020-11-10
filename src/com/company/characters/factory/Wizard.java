@@ -1,18 +1,19 @@
 package com.company.characters.factory;
 
 import com.company.weapon.factory.Lightning;
+import com.company.weapon.factory.WeaponsInterface;
 
 public class Wizard extends Monster implements WarriorInterface {
     // variables membres
-  private   int m_iDealedDamage = 10;
-  private Lightning lightningWeapon;
+    private int m_iDealedDamage = 10;
+    private WeaponsInterface lightningWeapon;
 
     //constructor
 
     public Wizard() {
         setHealthPoint(20);
         setWeakness("Water_Flask");
-        weaponFactory.setWeapon(lightningWeapon);
+        lightningWeapon = weaponFactory.setWeapon("Lightning");
     }
 
     // méthodes

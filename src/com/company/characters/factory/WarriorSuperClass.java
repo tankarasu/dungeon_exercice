@@ -13,7 +13,6 @@ public class WarriorSuperClass {
 
     protected WarriorSuperClass() {
         m_bIsAlive = true;
-
     }
 
     // méthodes
@@ -23,7 +22,7 @@ public class WarriorSuperClass {
 
     // getters
 
-    protected int getHealthPoint() {
+    public int getHealthPoint() {
         return m_iHealthPoint;
     }
 
@@ -33,7 +32,7 @@ public class WarriorSuperClass {
 
     // setters
 
-    protected void setHealthPoint(int HealthPoint) {
+    public void setHealthPoint(int HealthPoint) {
         m_iHealthPoint = HealthPoint;
     }
 

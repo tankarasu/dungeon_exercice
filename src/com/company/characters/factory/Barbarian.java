@@ -2,6 +2,7 @@ package com.company.characters.factory;
 
 import com.company.weapon.WeaponFactory;
 import com.company.weapon.factory.Axe;
+import com.company.weapon.factory.WeaponsInterface;
 
 import java.util.Random;
 
@@ -11,14 +12,16 @@ public class Barbarian extends Monster implements WarriorInterface {
     private int m_iDealedDamage;
     Random random = new Random();
     private boolean isKo;
-    private Axe axeWeapon;
+    // gives the type for the factory
+    private WeaponsInterface axeWeapon;
 
     //constructor
     public Barbarian() {
         setHealthPoint(20);
         setWeakness("Sword");
         m_iDAMAGE_POINT = 15;
-        weaponFactory.setWeapon(axeWeapon);
+        axeWeapon = weaponFactory.setWeapon("Axe");
+        setKo(false);
     }
 
     // méthodes
@@ -26,22 +29,22 @@ public class Barbarian extends Monster implements WarriorInterface {
     @Override
     public void attack(WarriorSuperClass defendingCharacter) {
         System.out.println("Barbarian Attack");
-
-        if (random.nextInt() > 0.3) {
-            System.out.println("Barbarian does an extraDamage");
-            m_iDealedDamage = m_iDAMAGE_POINT * 2;
+        if (!getIsKO()) {
+            axeWeapon.inflictDamages(defendingCharacter);
         } else {
-            m_iDealedDamage = m_iDAMAGE_POINT;
+            System.out.println("Le barbare est sonné, il n'attaque pas ce " +
+                    "tour");
         }
-        defendingCharacter.setHealthPoint(defendingCharacter.getHealthPoint() - m_iDealedDamage);
-        System.out.println("you suffers " + m_iDealedDamage + " and you have "
-                + defendingCharacter.getHealthPoint() + " HP remaining");
     }
 
-
     // getters
+    public boolean getIsKO() {
+        return isKo;
+    }
 
     // setters
 
-
+    public void setKo(boolean ko) {
+        isKo = ko;
+    }
 }
