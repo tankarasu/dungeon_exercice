@@ -1,10 +1,13 @@
 package com.company.characters.factory;
 
+import com.company.weapon.WeaponFactory;
+
 public class WarriorSuperClass {
 
     // variables membres
     private int m_iHealthPoint;
     private boolean m_bIsAlive;
+    protected static WeaponFactory weaponFactory = new WeaponFactory();
 
     //constructor
 

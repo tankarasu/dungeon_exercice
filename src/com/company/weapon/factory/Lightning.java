@@ -1,4 +1,4 @@
 package com.company.weapon.factory;
 
-public class Lightning {
+public class Lightning implements WeaponsInterface{
 }

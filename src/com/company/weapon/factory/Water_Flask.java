@@ -1,4 +1,5 @@
 package com.company.weapon.factory;
 
-public class Water_Flask {
+public class Water_Flask implements WeaponsInterface{
+
 }

@@ -43,6 +43,7 @@ public class Room {
             monsterInTheRoom.setIsAlive(false);
             if (!monsterInTheRoom.isAlive(monsterInTheRoom)) break;
         } while ((player.getIsAlive()) && (monsterInTheRoom.getIsAlive()));
+        System.out.println("---------------------");
     }
 
     // getters
