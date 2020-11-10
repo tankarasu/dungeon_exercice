@@ -8,6 +8,9 @@ import java.util.regex.Pattern;
 
 public class GamePlay {
 
+    // Replay option and save Score option on file
+    // test with Junits option
+    // take the difficulties level for rating Scrore
 
     // les différents choix possible dans le menu principale
     enum m_emenu {EASY, MEDIUM, HARD, HIGH_SCORE, QUIT}
