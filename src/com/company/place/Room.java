@@ -13,15 +13,13 @@ public class Room {
 
     //constructor
     public Room() {
+        // handle index of the room when created
         RoomIndex++;
-
         setRoomIndex(RoomIndex);
     }
 
     // méthodes
-    public void whatRoomIsIt() {
-        System.out.println("You are in the room n°" + getRoomIndex());
-    }
+
 
     // getters
 
@@ -40,4 +38,9 @@ public class Room {
     public void setRoomIndex(int RoomIndex) {
         m_iRoomIndex = RoomIndex;
     }
+
+    public void enterInsideTheRoom() {
+        System.out.println("You were attacked by a Wizard");
+    }
+
 }

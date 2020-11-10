@@ -1,5 +1,7 @@
 package com.company.place;
 
+import com.company.characters.factory.Adventurer;
+
 public class SingleDungeon {
 
 
@@ -12,9 +14,6 @@ public class SingleDungeon {
     private SingleDungeon() {
     }
 
-    //quantity of room in the current dungeon
-    int m_iRoomNumber = 5;
-
     // by passing through all rooms the Adventurer will fight all Monsters
     // inside
 
@@ -24,20 +23,23 @@ public class SingleDungeon {
 
     // méthodes
     public void enterDungeon(int p_difficulty) {
+        // initialize the dungeon, the players and the content of each room
+        Room[] dungeonRooms = new Room[4 + p_difficulty];
         System.out.println("you have entered the Dungeon");
-        fillTheDungeonWithRoom(p_difficulty);
+        Adventurer player = new Adventurer();
+        fillTheDungeonWithRoom(dungeonRooms);
+
 
         // all rooms are iterated once you're still alive and monster is not
         // Alive until the last Doors
         // Iterator Pattern ?
     }
 
-    private void fillTheDungeonWithRoom(int p_difficulty) {
-        Room[] dungeonRooms = new Room[4 + p_difficulty];
+    private void fillTheDungeonWithRoom(Room[] rooms) {
 
-        for (int i = 0; i < dungeonRooms.length; i++) {
+        for (int i = 0; i < rooms.length; i++) {
             Room aNewRoom = new Room();
-            dungeonRooms[i] = aNewRoom;
+            rooms[i] = aNewRoom;
         }
     }
 
@@ -49,6 +51,8 @@ public class SingleDungeon {
 
     private void openNextDoor() {
         System.out.println("next door's open");
+        // give information of who attack you
+        // the attack will be done inside the room
 
         // if last door information of endGame
         // if players die = EndGame

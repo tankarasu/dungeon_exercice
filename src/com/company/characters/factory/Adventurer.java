@@ -5,10 +5,14 @@ public class Adventurer extends WarriorSuperClass {
 
     /*
      * Player have 2 differents weapons depends monster at instanciation
-     * SingleTon on player? and his weapon ?
      * */
 
     //constructor
+
+    public Adventurer() {
+        setHealthPoint(200);
+    }
+
 
     // méthodes
 
@@ -16,6 +20,7 @@ public class Adventurer extends WarriorSuperClass {
     private void chooseWeapon() {
         System.out.println("You have choosen a weapon");
     }
+
 
     // getters
 
