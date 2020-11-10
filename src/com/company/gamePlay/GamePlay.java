@@ -1,5 +1,7 @@
 package com.company.gamePlay;
 
+import com.company.place.SingleDungeon;
+
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -77,8 +79,11 @@ public class GamePlay {
     }
 
     private static void playGame(int menuChoice) {
-        System.out.println("Play the Game");
+
+        SingleDungeon dungeon = SingleDungeon.getInstance();
+        dungeon.enterDungeon();
     }
+    /* todo we can factorize that in the switch-case */
 
     private static void quitGame() {
         System.out.println("Quit the Game");
@@ -88,4 +93,4 @@ public class GamePlay {
         System.out.println("View the highScore");
     }
 }
-    // variables membres
+// variables membres
