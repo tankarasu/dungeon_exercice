@@ -14,7 +14,7 @@ public class WarriorSuperClass {
     }
 
     // méthodes
-    protected boolean isAlive(WarriorSuperClass character) {
+    public boolean isAlive(WarriorSuperClass character) {
         return m_iHealthPoint > 0;
     }
 
@@ -34,7 +34,7 @@ public class WarriorSuperClass {
         m_iHealthPoint = HealthPoint;
     }
 
-    protected void setIsAlive(boolean IsAlive) {
+    public void setIsAlive(boolean IsAlive) {
         m_bIsAlive = IsAlive;
     }
 }

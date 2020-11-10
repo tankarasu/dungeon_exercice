@@ -8,6 +8,7 @@ public class Wizard extends Monster {
 
     public Wizard() {
         setHealthPoint(20);
+        setWeakness("Water_Flask");
     }
 
     // méthodes

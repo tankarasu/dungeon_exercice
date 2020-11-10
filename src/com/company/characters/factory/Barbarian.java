@@ -6,6 +6,7 @@ public class Barbarian extends Monster{
     //constructor
     public Barbarian() {
         setHealthPoint(20);
+        setWeakness("Sword");
     }
 
     // méthodes

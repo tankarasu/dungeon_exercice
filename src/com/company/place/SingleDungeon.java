@@ -29,8 +29,13 @@ public class SingleDungeon {
         Adventurer player = new Adventurer();
         fillTheDungeonWithRoom(dungeonRooms);
 
-
         // all rooms are iterated once you're still alive and monster is not
+         for (int i = 0; i < dungeonRooms.length; i++) {
+                dungeonRooms[i].enterInsideTheRoom(player);
+            }
+
+
+
         // Alive until the last Doors
         // Iterator Pattern ?
     }
