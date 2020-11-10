@@ -16,7 +16,6 @@ public class GamePlay {
     enum m_emenu {EASY, MEDIUM, HARD, HIGH_SCORE, QUIT}
 
     static Scanner m_scmenuScan = new Scanner(System.in);
-    int menuChoice = 0;
     static String regexTest = "(?:^)[ ]sword[ ]?(?:$)|(?:^)[ ]?water[ _]?flask[ ]?(?:$)";
 
     // méthodes
@@ -84,7 +83,7 @@ public class GamePlay {
     private static void playGame(int menuChoice) {
 
         SingleDungeon dungeon = SingleDungeon.getInstance();
-        dungeon.enterDungeon();
+        dungeon.enterDungeon(menuChoice);
     }
     /* todo we can factorize that in the switch-case */
 
