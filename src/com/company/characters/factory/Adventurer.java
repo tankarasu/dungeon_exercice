@@ -72,8 +72,9 @@ public class Adventurer extends WarriorSuperClass implements WarriorInterface {
             setM_choosenWeapon("Sword");
         } else if (matchResult & (theUserInput.equalsIgnoreCase("Water_Flask") | theUserInput.equalsIgnoreCase("Water Flask"))) {
             setM_choosenWeapon("Water_Flask");
+        } else {
+            setM_choosenWeapon("Fail");
         }
-        setM_choosenWeapon("Fail");
     }
 
     // getters

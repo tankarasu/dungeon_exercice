@@ -2,19 +2,21 @@ package com.company.weapon.factory;
 
 import com.company.characters.factory.WarriorSuperClass;
 
+import java.util.Random;
+
 public class Water_Flask implements WeaponsInterface {
+    // variables membres
+    public int m_iDealedDamage = 10;
+    public int flaskNumber = 0;
 
     @Override
     public void inflictDamages(WarriorSuperClass defendingCharacter) {
-        if (random.nextInt() > 0.3) {
-            System.out.println("Barbarian does an extraDamage");
-            m_iDealedDamage = m_iDAMAGE_POINT * 2;
+        if (!getClass().getSimpleName().equals(defendingCharacter.getWeakness())) {
+            System.out.println("This weapon isn't efficient against Barbarian");
         } else {
-            m_iDealedDamage = m_iDAMAGE_POINT;
+            defendingCharacter.setHealthPoint(defendingCharacter.getHealthPoint() - m_iDealedDamage);
+            System.out.println("Wizard suffers " + m_iDealedDamage + " damages" +
+                    " and he's still have " + defendingCharacter.getHealthPoint() + " HP remaining");
         }
-        defendingCharacter.setHealthPoint(defendingCharacter.getHealthPoint() - m_iDealedDamage);
-        System.out.println("you suffers " + m_iDealedDamage + " damages and " +
-                "you have "
-                + defendingCharacter.getHealthPoint() + " HP remaining");
     }
 }
