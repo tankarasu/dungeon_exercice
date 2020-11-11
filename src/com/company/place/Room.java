@@ -37,9 +37,9 @@ public class Room {
         }
         // a fight until one of them die
         do {
-            monsterInTheRoom.attack(player);
+            monsterInTheRoom.attack(monsterInTheRoom, player);
             if (!player.isAlive(player)) break;
-            player.attack(monsterInTheRoom);
+            player.attack(player, monsterInTheRoom);
             monsterInTheRoom.setIsAlive(false);
             if (!monsterInTheRoom.isAlive(monsterInTheRoom)) break;
         } while ((player.getIsAlive()) && (monsterInTheRoom.getIsAlive()));

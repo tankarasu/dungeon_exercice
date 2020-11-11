@@ -31,16 +31,18 @@ public class Adventurer extends WarriorSuperClass implements WarriorInterface {
     //todo ajouter une javadoc
 
     @Override
-    public void attack(WarriorSuperClass defendingCharacter) {
+    public void attack(WarriorSuperClass attackingCharacter,
+                       WarriorSuperClass defendingCharacter) {
         chooseWeapon();
         if (getM_choosenWeapon().equals("Fail")) {
             System.out.println("Your attack have failed");
         } else if (getM_choosenWeapon().equals("Sword")) {
             System.out.println("You attack with your " + getM_choosenWeapon());
-            swordWeapon.inflictDamages(defendingCharacter);
+            swordWeapon.inflictDamages(attackingCharacter, defendingCharacter);
         } else {
             System.out.println("You attack with your " + getM_choosenWeapon());
-            water_flaskWeapon.inflictDamages(defendingCharacter);
+            water_flaskWeapon.inflictDamages(attackingCharacter,
+                    defendingCharacter);
         }
 
         //

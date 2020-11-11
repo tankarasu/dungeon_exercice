@@ -17,7 +17,8 @@ public class Axe implements WeaponsInterface {
 
     // méthodes
     @Override
-    public void inflictDamages(WarriorSuperClass defendingCharacter) {
+    public void inflictDamages(WarriorSuperClass attackingCharacter,
+                               WarriorSuperClass defendingCharacter) {
         if (random.nextInt() > 0.3) {
             System.out.println("Barbarian does an extraDamage");
             m_iDealedDamage = m_iDAMAGE_POINT * 2;

@@ -15,7 +15,8 @@ public class Monster extends WarriorSuperClass implements WarriorInterface {
     }
 
     @Override
-    public void attack(WarriorSuperClass defendingCharacter) {
+    public void attack(WarriorSuperClass attackingCharacter,
+                       WarriorSuperClass defendingCharacter) {
 
     }
 

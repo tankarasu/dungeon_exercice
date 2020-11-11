@@ -11,7 +11,8 @@ public class Lightning implements WeaponsInterface {
 
     // méthodes
 
-    public void inflictDamages(WarriorSuperClass defendingCharacter) {
+    public void inflictDamages(WarriorSuperClass attackingCharacter,
+                               WarriorSuperClass defendingCharacter) {
         if (random.nextInt() > 0.25) {
             System.out.println("You had frozen by Wizard!");
             defendingCharacter.setM_bIsKO(true);

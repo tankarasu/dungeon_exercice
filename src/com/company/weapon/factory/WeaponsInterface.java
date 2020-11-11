@@ -5,6 +5,7 @@ import com.company.characters.factory.WarriorSuperClass;
 
 public interface WeaponsInterface {
 
-    void inflictDamages(WarriorSuperClass defendingCharacter);
+    void inflictDamages(WarriorSuperClass attackingCharacter,
+                        WarriorSuperClass defendingCharacter);
 
 }

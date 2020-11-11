@@ -10,6 +10,8 @@ public class WarriorSuperClass {
     private boolean m_bIsKO;
     protected static WeaponFactory weaponFactory = new WeaponFactory();
     private String m_sWeakness;
+    private int flaskNumber = 0;
+
 
     //constructor
 
@@ -36,6 +38,10 @@ public class WarriorSuperClass {
         return m_bIsKO;
     }
 
+    public int getFlaskNumber() {
+        return flaskNumber;
+    }
+
     public String getWeakness() {
         return m_sWeakness;
     }
@@ -53,4 +59,9 @@ public class WarriorSuperClass {
     public void setM_bIsKO(boolean IsKO) {
         m_bIsKO = IsKO;
     }
+
+    public void setFlaskNumber(int p_flaskNumber) {
+        flaskNumber = p_flaskNumber;
+    }
 }
+

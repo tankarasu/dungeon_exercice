@@ -9,8 +9,9 @@ public class Sword implements WeaponsInterface {
     // méthodes
 
     @Override
-    public void inflictDamages(WarriorSuperClass defendingCharacter) {
-    Random random = new Random();
+    public void inflictDamages(WarriorSuperClass attackingCharacter,
+                               WarriorSuperClass defendingCharacter) {
+        Random random = new Random();
         // is weapon efficient?
         if (!getClass().getSimpleName().equals(defendingCharacter.getWeakness())) {
             System.out.println("This weapon isn't efficient against the " +

@@ -25,10 +25,11 @@ public class Barbarian extends Monster implements WarriorInterface {
     // méthodes
 
     @Override
-    public void attack(WarriorSuperClass defendingCharacter) {
+    public void attack(WarriorSuperClass attackingCharacter,
+                       WarriorSuperClass defendingCharacter) {
         System.out.println("Barbarian Attack");
         if (!getIsKO()) {
-            axeWeapon.inflictDamages(defendingCharacter);
+            axeWeapon.inflictDamages(attackingCharacter, defendingCharacter);
         } else {
             System.out.println("Le barbare est sonné, il n'attaque pas ce " +
                     "tour");
