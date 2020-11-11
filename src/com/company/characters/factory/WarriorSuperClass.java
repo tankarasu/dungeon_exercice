@@ -21,7 +21,7 @@ public class WarriorSuperClass {
 
     // méthodes
     public boolean isAlive(WarriorSuperClass character) {
-        return getHealthPoint() > 0;
+        return character.getHealthPoint() > 0;
     }
 
     // getters

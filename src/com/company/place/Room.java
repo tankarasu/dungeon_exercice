@@ -40,8 +40,6 @@ public class Room {
             monsterInTheRoom.attack(monsterInTheRoom, player);
             if (!player.isAlive(player)) break;
             player.attack(player, monsterInTheRoom);
-            monsterInTheRoom.setIsAlive(false);
-            if (!monsterInTheRoom.isAlive(monsterInTheRoom)) break;
         } while ((player.getIsAlive()) && (monsterInTheRoom.getIsAlive()));
         System.out.println("---------------------");
     }

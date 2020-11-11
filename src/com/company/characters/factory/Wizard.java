@@ -21,8 +21,11 @@ public class Wizard extends Monster implements WarriorInterface {
     @Override
     public void attack(WarriorSuperClass attackingCharacter,
                        WarriorSuperClass defendingCharacter) {
-        System.out.println("Wizard attack");
+        System.out.println("\nWizard attack\n");
         lightningWeapon.inflictDamages(attackingCharacter, defendingCharacter);
+        if (!defendingCharacter.isAlive(defendingCharacter)) {
+            defendingCharacter.setIsAlive(false);
+        }
     }
 
 

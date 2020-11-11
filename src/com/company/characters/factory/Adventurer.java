@@ -13,8 +13,8 @@ public class Adventurer extends WarriorSuperClass implements WarriorInterface {
     /*
      * Player have 2 différents weapons depends monster at instanciation
      * */
-    private WeaponsInterface swordWeapon;
-    private WeaponsInterface water_flaskWeapon;
+    private final WeaponsInterface swordWeapon;
+    private final WeaponsInterface water_flaskWeapon;
     private String m_choosenWeapon;
     Scanner userInput = new Scanner(System.in);
 
@@ -33,36 +33,30 @@ public class Adventurer extends WarriorSuperClass implements WarriorInterface {
     @Override
     public void attack(WarriorSuperClass attackingCharacter,
                        WarriorSuperClass defendingCharacter) {
-        chooseWeapon();
-        if (getM_choosenWeapon().equals("Fail")) {
-            System.out.println("Your attack have failed");
-        } else if (getM_choosenWeapon().equals("Sword")) {
-            System.out.println("You attack with your " + getM_choosenWeapon());
-            swordWeapon.inflictDamages(attackingCharacter, defendingCharacter);
-        } else {
-            System.out.println("You attack with your " + getM_choosenWeapon());
-            water_flaskWeapon.inflictDamages(attackingCharacter,
-                    defendingCharacter);
-        }
-
-        //
-
-       /* System.out.println("Player Attack");
         if (!isM_bIsKO()) {
-            swordWeapon.inflictDamages(defendingCharacter);
+            chooseWeapon();
+            if (getM_choosenWeapon().equals("Fail")) {
+                System.out.println("Your attack have failed");
+            } else if (getM_choosenWeapon().equals("Sword")) {
+                System.out.println("You attack with your " + getM_choosenWeapon());
+                swordWeapon.inflictDamages(attackingCharacter, defendingCharacter);
+            } else {
+                System.out.println("You attack with your " + getM_choosenWeapon());
+                water_flaskWeapon.inflictDamages(attackingCharacter,
+                        defendingCharacter);
+            }
         } else {
-            System.out.println("vous êtes sonné par les éclairs, vous " +
-                    "n'attaquez pas ce " +
-                    "tour");
-            //todo traduction à faire
             setM_bIsKO(false);
-        }*/
+        }
+        if (!defendingCharacter.isAlive(defendingCharacter)) {
+            defendingCharacter.setIsAlive(false);
+            System.out.println("Ennemy is defeated");
+        }
     }
 
     // by input a weapon Name + behavior
     // choose a weapon for the attack
     private void chooseWeapon() {
-        String result = "";
         String regexUserInput = "^((?:[ ]?[sS]word[ ]?)|(?:[ ]?[wW]ater[ " +
                 "_][fF]lask)[ ]?)$";
         System.out.println("Wich weapon to use ? (Sword - Water_Flask)");
@@ -77,6 +71,7 @@ public class Adventurer extends WarriorSuperClass implements WarriorInterface {
         } else {
             setM_choosenWeapon("Fail");
         }
+
     }
 
     // getters

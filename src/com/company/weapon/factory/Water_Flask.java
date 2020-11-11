@@ -20,7 +20,11 @@ public class Water_Flask implements WeaponsInterface {
             defendingCharacter.setHealthPoint(defendingCharacter.getHealthPoint() - damageDone);
             System.out.println("Wizard suffers " + damageDone + " damages" +
                     " and he's still have " + defendingCharacter.getHealthPoint() + " HP remaining");
-            attackingCharacter.setFlaskNumber(attackingCharacter.getFlaskNumber() + 1);
+            if (defendingCharacter.getIsAlive()) {
+                attackingCharacter.setFlaskNumber(attackingCharacter.getFlaskNumber() + 1);
+            } else {
+                attackingCharacter.setFlaskNumber(0);
+            }
         }
     }
 }
