@@ -9,6 +9,7 @@ public class WarriorSuperClass {
     private boolean m_bIsAlive;
     private boolean m_bIsKO;
     protected static WeaponFactory weaponFactory = new WeaponFactory();
+    private String m_sWeakness;
 
     //constructor
 
@@ -33,6 +34,10 @@ public class WarriorSuperClass {
 
     public boolean isM_bIsKO() {
         return m_bIsKO;
+    }
+
+    public String getWeakness() {
+        return m_sWeakness;
     }
 
     // setters

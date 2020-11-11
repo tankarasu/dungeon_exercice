@@ -2,21 +2,31 @@ package com.company.weapon.factory;
 
 import com.company.characters.factory.WarriorSuperClass;
 
-public class Sword implements WeaponsInterface{
+import java.util.Random;
+
+public class Sword implements WeaponsInterface {
 
     // méthodes
 
     @Override
     public void inflictDamages(WarriorSuperClass defendingCharacter) {
-        if (random.nextInt() > 0.3) {
-            System.out.println("Barbarian does an extraDamage");
-            m_iDealedDamage = m_iDAMAGE_POINT * 2;
+    Random random = new Random();
+        // is weapon efficient?
+        if (!getClass().getSimpleName().equals(defendingCharacter.getWeakness())) {
+            System.out.println("This weapon isn't efficient against the " +
+                    "Wizard");
         } else {
-            m_iDealedDamage = m_iDAMAGE_POINT;
+            if (random.nextInt() > 0.3) {
+                System.out.println("Barbarian get disoriented");
+                defendingCharacter.setM_bIsKO(true);
+            }
+            // variables membres
+            int m_iDealedDamage = 10;
+            defendingCharacter.setHealthPoint(defendingCharacter.getHealthPoint() - m_iDealedDamage);
+            System.out.println("Barbarian suffers " + m_iDealedDamage + " " +
+                    "damages and " +
+                    "he's still have "
+                    + defendingCharacter.getHealthPoint() + " HP remaining");
         }
-        defendingCharacter.setHealthPoint(defendingCharacter.getHealthPoint() - m_iDealedDamage);
-        System.out.println("you suffers " + m_iDealedDamage + " damages and " +
-                "you have "
-                + defendingCharacter.getHealthPoint() + " HP remaining");
     }
 }
