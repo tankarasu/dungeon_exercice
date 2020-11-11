@@ -11,7 +11,6 @@ public class Axe implements WeaponsInterface {
 
     // constructor
 
-
     public Axe() {
         m_iDAMAGE_POINT = 15;
     }
@@ -25,10 +24,10 @@ public class Axe implements WeaponsInterface {
         } else {
             m_iDealedDamage = m_iDAMAGE_POINT;
         }
-        System.out.println(defendingCharacter.getHealthPoint() + " HP remaining");
-//        defendingCharacter.setHealthPoint(defendingCharacter.getHealthPoint() - m_iDealedDamage);
-//        System.out.println("you suffers " + m_iDealedDamage + " and you have "
-//                + defendingCharacter.getHealthPoint() + " HP remaining");
+        defendingCharacter.setHealthPoint(defendingCharacter.getHealthPoint() - m_iDealedDamage);
+        System.out.println("you suffers " + m_iDealedDamage + " damages and " +
+                "you have "
+                + defendingCharacter.getHealthPoint() + " HP remaining");
     }
 
 }

@@ -5,11 +5,13 @@ import com.company.weapon.factory.WeaponsInterface;
 public class Adventurer extends WarriorSuperClass implements WarriorInterface {
     // variables membres
 
+
     /*
      * Player have 2 différents weapons depends monster at instanciation
      * */
     private WeaponsInterface swordWeapon;
     private WeaponsInterface water_flaskWeapon;
+
 
     //constructor
 
@@ -23,7 +25,16 @@ public class Adventurer extends WarriorSuperClass implements WarriorInterface {
 
     @Override
     public void attack(WarriorSuperClass defendingCharacter) {
-        System.out.println("The Player attack");
+        System.out.println("Player Attack");
+        if (!isM_bIsKO()) {
+            swordWeapon.inflictDamages(defendingCharacter);
+        } else {
+            System.out.println("vous êtes sonné par les éclairs, vous " +
+                    "n'attaquez pas ce " +
+                    "tour");
+            //todo traduction à faire
+            setM_bIsKO(false);
+        }
     }
 
     // by input a weapon Name + behavior
@@ -33,6 +44,7 @@ public class Adventurer extends WarriorSuperClass implements WarriorInterface {
     }
 
     // getters
+
 
     // setters
 

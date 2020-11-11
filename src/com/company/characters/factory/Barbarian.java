@@ -1,7 +1,5 @@
 package com.company.characters.factory;
 
-import com.company.weapon.WeaponFactory;
-import com.company.weapon.factory.Axe;
 import com.company.weapon.factory.WeaponsInterface;
 
 import java.util.Random;
@@ -34,6 +32,7 @@ public class Barbarian extends Monster implements WarriorInterface {
         } else {
             System.out.println("Le barbare est sonné, il n'attaque pas ce " +
                     "tour");
+            setKo(false);
         }
     }
 

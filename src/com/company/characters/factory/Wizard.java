@@ -21,9 +21,7 @@ public class Wizard extends Monster implements WarriorInterface {
     @Override
     public void attack(WarriorSuperClass defendingCharacter) {
         System.out.println("Wizard attack");
-        defendingCharacter.setHealthPoint(defendingCharacter.getHealthPoint() - m_iDealedDamage);
-        System.out.println("you suffers " + m_iDealedDamage + " and you have "
-                + defendingCharacter.getHealthPoint() + " HP remaining");
+        lightningWeapon.inflictDamages(defendingCharacter);
     }
 
 

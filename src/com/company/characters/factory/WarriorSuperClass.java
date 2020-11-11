@@ -7,6 +7,7 @@ public class WarriorSuperClass {
     // variables membres
     private int m_iHealthPoint;
     private boolean m_bIsAlive;
+    private boolean m_bIsKO;
     protected static WeaponFactory weaponFactory = new WeaponFactory();
 
     //constructor
@@ -30,6 +31,10 @@ public class WarriorSuperClass {
         return m_bIsAlive;
     }
 
+    public boolean isM_bIsKO() {
+        return m_bIsKO;
+    }
+
     // setters
 
     public void setHealthPoint(int HealthPoint) {
@@ -38,5 +43,9 @@ public class WarriorSuperClass {
 
     public void setIsAlive(boolean IsAlive) {
         m_bIsAlive = IsAlive;
+    }
+
+    public void setM_bIsKO(boolean IsKO) {
+        m_bIsKO = IsKO;
     }
 }
